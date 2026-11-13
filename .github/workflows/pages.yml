@@ -18,9 +18,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Download site
+      - name: Unzip site
         run: |
-          curl -L -o site.zip https://github.com/fnatyx/fnatix-porto/releases/download/v1.0.0/fnatix-porto-deploy.zip
           mkdir -p _site
           unzip -o site.zip -d _site
       - uses: actions/upload-pages-artifact@v3
